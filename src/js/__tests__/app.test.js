@@ -14,8 +14,8 @@ test('creation bowerman', () => {
     health: 100,
     level: 1,
     attack: 25,
-    defend: 25
-  }
+    defend: 25,
+  };
   expect(hero1).toEqual(expected);
 });
 
@@ -27,8 +27,8 @@ test('creation swordsman', () => {
     health: 100,
     level: 1,
     attack: 40,
-    defend: 10
-  }
+    defend: 10,
+  };
   expect(hero2).toEqual(expected);
 });
 
@@ -40,8 +40,8 @@ test('creation magician', () => {
     health: 100,
     level: 1,
     attack: 10,
-    defend: 40
-  }
+    defend: 40,
+  };
   expect(hero3).toEqual(expected);
 });
 
@@ -53,8 +53,8 @@ test('creation undead', () => {
     health: 100,
     level: 1,
     attack: 25,
-    defend: 25
-  }
+    defend: 25,
+  };
   expect(hero4).toEqual(expected);
 });
 
@@ -66,8 +66,8 @@ test('creation zombie', () => {
     health: 100,
     level: 1,
     attack: 40,
-    defend: 10
-  }
+    defend: 10,
+  };
   expect(hero5).toEqual(expected);
 });
 
@@ -79,8 +79,8 @@ test('creation daemon', () => {
     health: 100,
     level: 1,
     attack: 10,
-    defend: 40
-  }
+    defend: 40,
+  };
   expect(hero6).toEqual(expected);
 });
 
@@ -101,12 +101,12 @@ test('level up', () => {
     health: 100,
     level: 3,
     attack: 14.4,
-    defend: 57.6
-  }
+    defend: 57.6,
+  };
   expect(hero6).toEqual(expected);
 });
 
-test('kelled', () => {
+test('killed', () => {
   const hero6 = new Daemon('Mimi');
   hero6.damage(800);
   hero6.levelUp();
@@ -116,7 +116,16 @@ test('kelled', () => {
     health: -380,
     level: 1,
     attack: 10,
-    defend: 40
-  }
+    defend: 40,
+  };
   expect(hero6).toEqual(expected);
+});
+
+test.each([
+  ['M'],
+  ['MarambaLumumba518'],
+  [15],
+])('check name', (name) => {
+  const hero = new Daemon(name);
+  expect(hero.name).not.toBe(name);
 });

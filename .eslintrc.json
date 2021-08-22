@@ -6,6 +6,8 @@
      "jest": true
   },
   "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-unused-vars": "off",
     "no-restricted-syntax": [
       "error",
       "LabeledStatement",
