@@ -126,6 +126,5 @@ test.each([
   ['MarambaLumumba518'],
   [15],
 ])('check name', (name) => {
-  const hero = new Daemon(name);
-  expect(hero.name).not.toBe(name);
+  expect(() => new Daemon(name)).toThrowError('Unimplemented');
 });

@@ -3,7 +3,7 @@ export default class Character {
     if (name.length > 2 && name.length < 11 && typeof name === 'string') {
       this.name = name;
     } else {
-      this.name = 'NoName';
+      throw new Error('Unimplemented');
     }
     this.health = 100;
     this.level = 1;
